@@ -3,6 +3,7 @@ package JavaStreamsOneAgain;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class SpecialCharacterInString {
@@ -36,5 +37,8 @@ public class SpecialCharacterInString {
         }, Collectors.counting()));
 
         System.out.println(map1);
+
+        Arrays.stream(str.split("")).collect(Collectors.groupingBy(Function.identity(), Collectors.counting())).entrySet()
+                .stream().max(Map.Entry.comparingByValue());
     }
 }
