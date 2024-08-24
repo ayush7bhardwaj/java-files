@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class SpecialCharacterInString {
     public static void main(String[] args) {
@@ -40,5 +41,7 @@ public class SpecialCharacterInString {
 
         Arrays.stream(str.split("")).collect(Collectors.groupingBy(Function.identity(), Collectors.counting())).entrySet()
                 .stream().max(Map.Entry.comparingByValue());
+
+        Arrays.stream(str.split(" ")).flatMap(string -> Stream.of(string.charAt(0))).collect(Collectors.toList());
     }
 }
