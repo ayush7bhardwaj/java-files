@@ -41,7 +41,9 @@ public class SpecialCharacterInString {
 
         Arrays.stream(str.split("")).collect(Collectors.groupingBy(Function.identity(), Collectors.counting())).entrySet()
                 .stream().max(Map.Entry.comparingByValue());
-
         Arrays.stream(str.split(" ")).flatMap(string -> Stream.of(string.charAt(0))).collect(Collectors.toList());
+
+        Arrays.stream(str.split("")).collect(Collectors.groupingBy(Function.identity(), Collectors.counting())).entrySet()
+                .stream().min(Map.Entry.comparingByValue());
     }
 }
