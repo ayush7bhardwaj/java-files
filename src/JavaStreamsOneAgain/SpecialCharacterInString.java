@@ -43,5 +43,8 @@ public class SpecialCharacterInString {
                 .stream().max(Map.Entry.comparingByValue());
 
         Arrays.stream(str.split(" ")).flatMap(string -> Stream.of(string.charAt(0))).collect(Collectors.toList());
+
+        String s = "You are best singer Shubh bhai";
+        Arrays.stream(s.split("")).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
     }
 }
