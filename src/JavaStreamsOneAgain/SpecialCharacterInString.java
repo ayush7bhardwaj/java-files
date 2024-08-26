@@ -44,7 +44,7 @@ public class SpecialCharacterInString {
 
         Arrays.stream(str.split(" ")).flatMap(string -> Stream.of(string.charAt(0))).collect(Collectors.toList());
 
-        String s = "You are best singer Shubh bhai";
+        String s = "You are best singer Shubh bhai"; // addeded on feature 1 branch on 26/08/2024
         Arrays.stream(s.split("")).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
     }
 }
