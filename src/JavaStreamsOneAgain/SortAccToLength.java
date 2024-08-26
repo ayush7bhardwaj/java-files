@@ -14,6 +14,6 @@ public class SortAccToLength {
                 return 1;
             return -1;
         }).forEach(System.out::println);
-        System.out.println("Test conflictingsg"+strings);
+        System.out.println("Test conflict"+strings);
     }
 }
