@@ -1,6 +1,7 @@
 package JavaStreamsOneAgain;
 
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.DoubleStream;
@@ -16,6 +17,11 @@ public class FlatMapExample {
         );
 
         System.out.println(listOfLists.stream().flatMap(list -> list.stream()).collect(Collectors.toList()));
+
+        listOfLists.stream().flatMap(list -> list.stream())
+                .collect(Collectors.partitioningBy(string -> Character.isUpperCase(string.charAt(0))));
+
+        listOfLists.stream().flatMap(list -> Stream.of(list.get(1))).collect(Collectors.toList());
 
         List<String> list = Arrays.asList("Geeks", "GFG", "GeeksforGeeks", "gfg");
 
